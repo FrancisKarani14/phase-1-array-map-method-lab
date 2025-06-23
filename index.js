@@ -12,5 +12,10 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(sentence => {
+    return sentence
+      .split(' ') // split sentence into words
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // capitalize each word
+      .join(' '); // join words back into a sentence
+  });
+};
